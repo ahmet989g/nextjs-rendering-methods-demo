@@ -31,7 +31,7 @@ export default function HomePage() {
             </div>
             <p className="text-gray-600 mb-4">Client-Side Rendering</p>
             <ul className="text-sm text-gray-500 mb-4 space-y-1">
-              <li>• Client'ta JavaScript ile render</li>
+              <li>• Client&apos;ta JavaScript ile render</li>
               <li>• SEO için uygun değil</li>
               <li>• Interactive çok hızlı</li>
               <li>• Loading state manuel</li>
@@ -52,7 +52,7 @@ export default function HomePage() {
             </div>
             <p className="text-gray-600 mb-4">Server-Side Rendering</p>
             <ul className="text-sm text-gray-500 mb-4 space-y-1">
-              <li>• Server'da her request'te render</li>
+              <li>• Server&apos;da her request&apos;te render</li>
               <li>• SEO friendly</li>
               <li>• İlk yükleme hızlı</li>
               <li>• Server yükü yüksek</li>
@@ -73,10 +73,10 @@ export default function HomePage() {
             </div>
             <p className="text-gray-600 mb-4">Static Site Generation</p>
             <ul className="text-sm text-gray-500 mb-4 space-y-1">
-              <li>• Build time'da pre-render</li>
+              <li>• Build time&apos;da pre-render</li>
               <li>• En hızlı yükleme</li>
-              <li>• CDN'de cache'lenebilir</li>
-              <li>• Data build time'dan</li>
+              <li>• CDN&apos;de cache&apos;lenebilir</li>
+              <li>• Data build time&apos;dan</li>
             </ul>
             <Link
               href="/ssg/products"
@@ -96,7 +96,7 @@ export default function HomePage() {
             <ul className="text-sm text-gray-500 mb-4 space-y-1">
               <li>• Static + periodic revalidation</li>
               <li>• En iyi performans/freshness balance</li>
-              <li>• Background'da güncelleme (Eski cache silinir, yenisi oluşturulur)</li>
+              <li>• Background&apos;da güncelleme (Eski cache silinir, yenisi oluşturulur)</li>
               <li>• E-commerce için ideal</li>
             </ul>
             <Link
@@ -194,7 +194,7 @@ export default function HomePage() {
                 <li>• Skeleton loading states kullan</li>
                 <li>• Image lazy loading aktifleştir</li>
                 <li>• Code splitting uygula</li>
-                <li>• Bundle size'ı optimize et</li>
+                <li>• Bundle size&apos;ı optimize et</li>
               </ul>
             </div>
             <div>
@@ -202,8 +202,8 @@ export default function HomePage() {
               <ul className="space-y-1 text-gray-600">
                 <li>• CDN cache headers ayarla</li>
                 <li>• ISR revalidation sürelerini optimize et</li>
-                <li>• Browser cache'i leverage et</li>
-                <li>• API response cache'i kullan</li>
+                <li>• Browser cache&apos;i leverage et</li>
+                <li>• API response cache&apos;i kullan</li>
               </ul>
             </div>
           </div>

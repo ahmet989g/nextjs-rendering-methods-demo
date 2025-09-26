@@ -91,8 +91,8 @@ const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({
       try {
         // Page Load Time from Navigation API
         const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming
-        const realPageLoad = navigation && navigation.loadEventEnd > 0
-          ? navigation.loadEventEnd - navigation.navigationStart
+        const realPageLoad = navigation && navigation.loadEventEnd > 0 && navigation.activationStart
+          ? navigation.loadEventEnd - navigation.activationStart
           : null
 
         // Route Change Time
@@ -100,8 +100,11 @@ const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({
 
         // Memory Usage
         const realMemory = 'memory' in performance ? {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           used: Math.round((performance as any).memory.usedJSHeapSize / 1024 / 1024),
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           total: Math.round((performance as any).memory.totalJSHeapSize / 1024 / 1024),
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           limit: Math.round((performance as any).memory.jsHeapSizeLimit / 1024 / 1024)
         } : null
 
@@ -330,7 +333,7 @@ const PerformanceMonitor: React.FC<PerformanceMonitorProps> = ({
           </div>
 
           <div className="mt-3 p-3 bg-blue-50 rounded text-xs">
-            <strong>📚 Not:</strong> Bu metrikler Google'ın resmi <code>web-vitals</code> kütüphanesi ile toplanmaktadır.
+            <strong>📚 Not:</strong> Bu metrikler Google&apos;ın resmi <code>web-vitals</code> kütüphanesi ile toplanmaktadır.
             Core Web Vitals Google Search ranking faktörleridir.
           </div>
         </div>

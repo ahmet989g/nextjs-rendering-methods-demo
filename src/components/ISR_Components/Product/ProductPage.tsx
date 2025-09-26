@@ -54,7 +54,6 @@ const ProductPage = async () => {
         renderingType="ISR"
         dataFetchTime={fetchTime}
         totalProducts={products.length}
-        cacheStatus={cacheStatus}
         requestTime={requestTime}
         revalidateTime={60}
       />
@@ -66,7 +65,7 @@ const ProductPage = async () => {
         <p className="text-sm">Request Time: {requestTime}</p>
         <p className="text-sm">Revalidate Interval: 60 saniye</p>
         <p className="text-sm">
-          Bu sayfa cache'den serve ediliyor, 60 saniye sonra background'da güncelleniyor
+          Bu sayfa cache&apos;den serve ediliyor, 60 saniye sonra background&apos;da güncelleniyor
         </p>
       </div>
 

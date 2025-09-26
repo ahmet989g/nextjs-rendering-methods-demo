@@ -79,7 +79,7 @@ const ProductPage = () => {
       <div className="bg-red-50 p-4 rounded mb-4">
         <h3 className="font-semibold">CSR Özellikleri:</h3>
         <p className="text-sm">
-          Client-side rendering, JavaScript ile client'ta çalışır.
+          Client-side rendering, JavaScript ile client&apos;ta çalışır.
           SEO için uygun değil ancak çok interactive.
         </p>
         <p className="text-sm">

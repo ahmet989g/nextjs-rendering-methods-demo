@@ -50,13 +50,13 @@ const ProductPage = async () => {
 
       <h1 className='text-2xl font-bold mb-4'>Ürünler (SSG)</h1>
       <p className="text-sm text-gray-500 mb-4">
-        Bu sayfa build time'da oluşturuldu: {buildDate}
+        Bu sayfa build time&apos;da oluşturuldu: {buildDate}
       </p>
 
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
         {products.length === 0 ? (
           <div className="col-span-full text-center py-8">
-            <p>Ürünler build time'da yüklenemedi.</p>
+            <p>Ürünler build time&apos;da yüklenemedi.</p>
           </div>
         ) : (
           products.map((product: Product) => (
