@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react'
 
 interface PerformanceMetrics {
-  navigationStart: number
+  activationStart: number | undefined
   domContentLoaded: number
   loadComplete: number
   firstContentfulPaint: number
@@ -36,7 +36,9 @@ export const usePerformanceMetrics = () => {
         if ('LayoutShift' in window) {
           const observer = new PerformanceObserver((list) => {
             for (const entry of list.getEntries()) {
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
               if ((entry as any).hadRecentInput) continue
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
               cls += (entry as any).value
             }
           })
@@ -48,6 +50,7 @@ export const usePerformanceMetrics = () => {
         if ('PerformanceEventTiming' in window) {
           const observer = new PerformanceObserver((list) => {
             for (const entry of list.getEntries()) {
+              // eslint-disable-next-line @typescript-eslint/no-explicit-any
               fid = (entry as any).processingStart - entry.startTime
             }
           })
@@ -55,9 +58,9 @@ export const usePerformanceMetrics = () => {
         }
 
         const metrics: PerformanceMetrics = {
-          navigationStart: navigation.navigationStart,
-          domContentLoaded: navigation.domContentLoadedEventEnd - navigation.navigationStart,
-          loadComplete: navigation.loadEventEnd - navigation.navigationStart,
+          activationStart: navigation.activationStart,
+          domContentLoaded: navigation.domContentLoadedEventEnd - (navigation?.activationStart ?? 0),
+          loadComplete: navigation.loadEventEnd - (navigation?.activationStart ?? 0),
           firstContentfulPaint: fcp,
           largestContentfulPaint: fcp + 200, // Simulated - real LCP needs observer
           cumulativeLayoutShift: cls,

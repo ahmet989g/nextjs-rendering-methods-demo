@@ -19,6 +19,7 @@ export class PerformanceTracker {
     return 0;
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   static getNavigationTiming(): any {
     if (typeof window !== 'undefined' && window.performance) {
       return window.performance.getEntriesByType('navigation')[0];
@@ -26,8 +27,11 @@ export class PerformanceTracker {
     return null;
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   static getMemoryUsage(): any {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
     if (typeof window !== 'undefined' && (window.performance as any).memory) {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
       return (window.performance as any).memory;
     }
     return null;
